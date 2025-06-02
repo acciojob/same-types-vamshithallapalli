@@ -1,9 +1,19 @@
 function isSameType(value1, value2) {
-  //your js code here
-	if (Number.isNaN(value1) && Number.isNaN(value2)) {
+	 const val1 = parseFloat(value1);
+  const val2 = parseFloat(value2);
+
+  const isVal1NaN = Number.isNaN(val1);
+  const isVal2NaN = Number.isNaN(val2);
+
+  if (isVal1NaN && isVal2NaN) {
     return true;
   }
-	return typeof value1 === typeof value2;
+
+  if (!isVal1NaN && !isVal2NaN) {
+    return true; // Both are valid numbers
+  }
+
+  return false; // One is NaN, the other is not
 }
 
 // do not change the code below.
